@@ -2,6 +2,7 @@ package artboxproject.artboxproject.controllers;
 
 import artboxproject.artboxproject.models.HistoricoCompras;
 import artboxproject.artboxproject.services.HistoricoComprasService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +18,7 @@ public class HistoricoComprasController {
 
     // Criar uma nova compra
     @PostMapping
-    public HistoricoCompras createCompra(@RequestBody HistoricoCompras compra) {
+    public HistoricoCompras createCompra(@Valid @RequestBody HistoricoCompras compra) {
         return historicoComprasService.createCompra(compra);
     }
 
